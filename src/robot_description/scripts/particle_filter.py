@@ -27,10 +27,15 @@ class ParticleFilter(Node):
 
         self.alpha_rot = 0.1 
         self.alpha_trans = 0.1 
+        
+        if not self.has_parameter('use_sim_time'):
+            self.declare_parameter('use_sim_time', True)
 
         self.pose_pub = self.create_publisher(PoseWithCovarianceStamped, '/amcl_pose', 10)
         self.cloud_pub = self.create_publisher(PoseArray, '/particlecloud', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
+
+        from rclpy.qos import DurabilityPolicy, ReliabilityPolicy, HistoryPolicy, QoSProfile
 
         odom_qos = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -38,12 +43,18 @@ class ParticleFilter(Node):
             depth=10
         )
         
+        map_qos = QoSProfile(
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            reliability=ReliabilityPolicy.RELIABLE,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1
+        )
 
-        self.create_subscription(OccupancyGrid, '/map', self.map_callback, 10)
+        self.create_subscription(OccupancyGrid, '/map', self.map_callback, map_qos)
         self.create_subscription(Odometry, '/ekf_diff_imu/odom', self.odom_callback, odom_qos)
         self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
 
-        self.get_logger().info("Particle Filter Node Started via ROS 2 Jazzy...")
+        self.get_logger().info("Particle Filter Node Started via ROS2")
 
     def map_callback(self, msg):
         self.map_data = np.array(msg.data).reshape((msg.info.height, msg.info.width))
@@ -201,7 +212,34 @@ class ParticleFilter(Node):
         msg.pose.pose.orientation.z = q[2]
         msg.pose.pose.orientation.w = q[3]
         self.pose_pub.publish(msg)
-        
+
+        if self.last_odom is not None: 
+            odom_x = self.last_odom[0]
+            odom_y = self.last_odom[1]
+            odom_yaw = self.last_odom[2]
+            
+            yaw_diff = yaw_avg - odom_yaw
+            
+            trans_x = x_avg - (odom_x * math.cos(yaw_diff) - odom_y * math.sin(yaw_diff))
+            trans_y = y_avg - (odom_x * math.sin(yaw_diff) + odom_y * math.cos(yaw_diff))
+            
+            t = TransformStamped()
+            t.header.stamp = self.get_clock().now().to_msg()
+            t.header.frame_id = 'map'
+            t.child_frame_id = 'odom'
+            
+            t.transform.translation.x = trans_x
+            t.transform.translation.y = trans_y
+            t.transform.translation.z = 0.0
+            
+            q_tf = tf_transformations.quaternion_from_euler(0, 0, yaw_diff)
+            t.transform.rotation.x = q_tf[0]
+            t.transform.rotation.y = q_tf[1]
+            t.transform.rotation.z = q_tf[2]
+            t.transform.rotation.w = q_tf[3]
+            
+            self.tf_broadcaster.sendTransform(t)
+        self.publish_particles()
    
     def publish_particles(self):
         msg = PoseArray()

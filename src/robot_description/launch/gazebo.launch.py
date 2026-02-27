@@ -138,6 +138,15 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )    
 
+
+    particle_filter_node = Node(
+        package='robot_description',
+        executable='particle_filter.py',
+        name='particle_filter_node',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
+    )
+
     return LaunchDescription([
         DeclareLaunchArgument('use_sim_time',default_value='True',description='Use sim time if true'),
         DeclareLaunchArgument('urdf_file',default_value=os.path.join(bringup_dir, 'src', 'description', 'test.urdf'),description='Whether to start RVIZ'),
@@ -150,5 +159,6 @@ def generate_launch_description():
         frame_id_converter_node, 
         ekf_diff_imu_node,
         rtabmap_vo_node,
-        map_publisher_node
+        map_publisher_node,
+        particle_filter_node
     ])
