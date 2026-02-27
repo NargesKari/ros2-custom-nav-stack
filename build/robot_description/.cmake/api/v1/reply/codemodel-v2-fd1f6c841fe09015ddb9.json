@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-24e4c36777c6e5c063da.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "robot_description",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "astar_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-astar_node-a2521edab969ce0c89e0.json",
+					"name" : "astar_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ekf_diff_imu_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ekf_diff_imu_node-759848d570fc0d3c16ed.json",
+					"name" : "ekf_diff_imu_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "frame_id_converter_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-frame_id_converter_node-bae242e5e5c6019d7c3e.json",
+					"name" : "frame_id_converter_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "motor_command_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-motor_command_node-4d66e1b5554a79d35be3.json",
+					"name" : "motor_command_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_description_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_description_uninstall-4f3a6ea85e643283b05f.json",
+					"name" : "robot_description_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-0fb5bc8c318d32735e32.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description",
+		"source" : "/home/dynamic/Robo/ros2-custom-nav-stack/src/robot_description"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

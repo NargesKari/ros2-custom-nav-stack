@@ -1,0 +1,2 @@
+Invoking command in '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description -- -j20 -l20
+Invoked command in '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description -- -j20 -l20

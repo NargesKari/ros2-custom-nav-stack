@@ -1,0 +1,212 @@
+[0.000000] (-) TimerEvent: {}
+[0.000404] (robot_description) JobQueued: {'identifier': 'robot_description', 'dependencies': OrderedDict()}
+[0.000952] (robot_description) JobStarted: {'identifier': 'robot_description'}
+[0.006144] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'cmake'}
+[0.007278] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'build'}
+[0.007311] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description', '--', '-j20', '-l20'], 'cwd': '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'dynamic'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dynamic'), ('OLDPWD', '/home/dynamic/Robo/ros2-custom-nav-stack'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1548'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=32d6f2e782c04870f76dac4869a1ac5c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'dynamic'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'dynamic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/dynamic/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/dynamic-Zenbook-UX8402ZE-UX8402ZE:@/tmp/.ICE-unix/1548,unix/dynamic-Zenbook-UX8402ZE-UX8402ZE:/tmp/.ICE-unix/1548'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/05577369_fa8b_4784_bf3e_244199fc9d58'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.FBYKL3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.107'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=32d6f2e782c04870f76dac4869a1ac5c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/home/dynamic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[0.028889] (robot_description) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.100148] (-) TimerEvent: {}
+[0.141548] (robot_description) StdoutLine: {'line': b'-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.161474] (robot_description) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.163056] (robot_description) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.167020] (robot_description) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.173277] (robot_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.181199] (robot_description) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.200320] (-) TimerEvent: {}
+[0.201403] (robot_description) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.202155] (robot_description) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.271792] (robot_description) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.300534] (-) TimerEvent: {}
+[0.300773] (robot_description) StdoutLine: {'line': b'-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.317539] (robot_description) StdoutLine: {'line': b'-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[0.327316] (robot_description) StdoutLine: {'line': b'-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[0.332620] (robot_description) StdoutLine: {'line': b'-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)\n'}
+[0.335153] (robot_description) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[0.382540] (robot_description) StdoutLine: {'line': b'-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[0.385786] (robot_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[0.400657] (-) TimerEvent: {}
+[0.433263] (robot_description) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.433629] (robot_description) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.434146] (robot_description) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.434286] (robot_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[0.434367] (robot_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.434431] (robot_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[0.435046] (robot_description) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.435144] (robot_description) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.435272] (robot_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.435701] (robot_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.451424] (robot_description) StdoutLine: {'line': b'-- Generating done\n'}
+[0.457430] (robot_description) StdoutLine: {'line': b'-- Build files have been written to: /home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description\n'}
+[0.479958] (robot_description) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target frame_id_converter_node\x1b[0m\n'}
+[0.481016] (robot_description) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target motor_command_node\x1b[0m\n'}
+[0.482520] (robot_description) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target ekf_diff_imu_node\x1b[0m\n'}
+[0.491685] (robot_description) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/astar_node.dir/scripts/astar.cpp.o\x1b[0m\n'}
+[0.493291] (robot_description) StdoutLine: {'line': b'[ 37%] Built target frame_id_converter_node\n'}
+[0.493992] (robot_description) StdoutLine: {'line': b'[ 62%] Built target motor_command_node\n'}
+[0.499758] (robot_description) StdoutLine: {'line': b'[ 87%] Built target ekf_diff_imu_node\n'}
+[0.500721] (-) TimerEvent: {}
+[0.601069] (-) TimerEvent: {}
+[0.701455] (-) TimerEvent: {}
+[0.801827] (-) TimerEvent: {}
+[0.902214] (-) TimerEvent: {}
+[1.002525] (-) TimerEvent: {}
+[1.102874] (-) TimerEvent: {}
+[1.203290] (-) TimerEvent: {}
+[1.303696] (-) TimerEvent: {}
+[1.404120] (-) TimerEvent: {}
+[1.504494] (-) TimerEvent: {}
+[1.604894] (-) TimerEvent: {}
+[1.705206] (-) TimerEvent: {}
+[1.805551] (-) TimerEvent: {}
+[1.905981] (-) TimerEvent: {}
+[2.006372] (-) TimerEvent: {}
+[2.106766] (-) TimerEvent: {}
+[2.207097] (-) TimerEvent: {}
+[2.307422] (-) TimerEvent: {}
+[2.407873] (-) TimerEvent: {}
+[2.508189] (-) TimerEvent: {}
+[2.608508] (-) TimerEvent: {}
+[2.708924] (-) TimerEvent: {}
+[2.809229] (-) TimerEvent: {}
+[2.909572] (-) TimerEvent: {}
+[3.010007] (-) TimerEvent: {}
+[3.110362] (-) TimerEvent: {}
+[3.210762] (-) TimerEvent: {}
+[3.311142] (-) TimerEvent: {}
+[3.411507] (-) TimerEvent: {}
+[3.511879] (-) TimerEvent: {}
+[3.612166] (-) TimerEvent: {}
+[3.712492] (-) TimerEvent: {}
+[3.812824] (-) TimerEvent: {}
+[3.913251] (-) TimerEvent: {}
+[4.013602] (-) TimerEvent: {}
+[4.113970] (-) TimerEvent: {}
+[4.214340] (-) TimerEvent: {}
+[4.314631] (-) TimerEvent: {}
+[4.414889] (-) TimerEvent: {}
+[4.515158] (-) TimerEvent: {}
+[4.615473] (-) TimerEvent: {}
+[4.715768] (-) TimerEvent: {}
+[4.816065] (-) TimerEvent: {}
+[4.916472] (-) TimerEvent: {}
+[5.016811] (-) TimerEvent: {}
+[5.117116] (-) TimerEvent: {}
+[5.217450] (-) TimerEvent: {}
+[5.317747] (-) TimerEvent: {}
+[5.418037] (-) TimerEvent: {}
+[5.518303] (-) TimerEvent: {}
+[5.618692] (-) TimerEvent: {}
+[5.718997] (-) TimerEvent: {}
+[5.819335] (-) TimerEvent: {}
+[5.919700] (-) TimerEvent: {}
+[6.020038] (-) TimerEvent: {}
+[6.120387] (-) TimerEvent: {}
+[6.220680] (-) TimerEvent: {}
+[6.321077] (-) TimerEvent: {}
+[6.421448] (-) TimerEvent: {}
+[6.521828] (-) TimerEvent: {}
+[6.622134] (-) TimerEvent: {}
+[6.722453] (-) TimerEvent: {}
+[6.822903] (-) TimerEvent: {}
+[6.923251] (-) TimerEvent: {}
+[7.023538] (-) TimerEvent: {}
+[7.123969] (-) TimerEvent: {}
+[7.224268] (-) TimerEvent: {}
+[7.324573] (-) TimerEvent: {}
+[7.424953] (-) TimerEvent: {}
+[7.525220] (-) TimerEvent: {}
+[7.625529] (-) TimerEvent: {}
+[7.725823] (-) TimerEvent: {}
+[7.826096] (-) TimerEvent: {}
+[7.926490] (-) TimerEvent: {}
+[8.026869] (-) TimerEvent: {}
+[8.127232] (-) TimerEvent: {}
+[8.227579] (-) TimerEvent: {}
+[8.327949] (-) TimerEvent: {}
+[8.428314] (-) TimerEvent: {}
+[8.528639] (-) TimerEvent: {}
+[8.628961] (-) TimerEvent: {}
+[8.729278] (-) TimerEvent: {}
+[8.829638] (-) TimerEvent: {}
+[8.929969] (-) TimerEvent: {}
+[9.030221] (-) TimerEvent: {}
+[9.130555] (-) TimerEvent: {}
+[9.230827] (-) TimerEvent: {}
+[9.331229] (-) TimerEvent: {}
+[9.431585] (-) TimerEvent: {}
+[9.531965] (-) TimerEvent: {}
+[9.542130] (robot_description) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable astar_node\x1b[0m\n'}
+[9.632145] (-) TimerEvent: {}
+[9.732434] (-) TimerEvent: {}
+[9.832788] (-) TimerEvent: {}
+[9.933191] (-) TimerEvent: {}
+[9.982092] (robot_description) StdoutLine: {'line': b'[100%] Built target astar_node\n'}
+[9.990117] (robot_description) CommandEnded: {'returncode': 0}
+[9.990486] (robot_description) JobProgress: {'identifier': 'robot_description', 'progress': 'install'}
+[9.995653] (robot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description'], 'cwd': '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_GB:en'), ('USER', 'dynamic'), ('LC_TIME', 'en_US.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/dynamic'), ('OLDPWD', '/home/dynamic/Robo/ros2-custom-nav-stack'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1548'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=32d6f2e782c04870f76dac4869a1ac5c'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'dynamic'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'dynamic'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/dynamic/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/dynamic-Zenbook-UX8402ZE-UX8402ZE:@/tmp/.ICE-unix/1548,unix/dynamic-Zenbook-UX8402ZE-UX8402ZE:/tmp/.ICE-unix/1548'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/05577369_fa8b_4784_bf3e_244199fc9d58'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_GB.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.FBYKL3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.107'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=32d6f2e782c04870f76dac4869a1ac5c'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/home/dynamic/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description:/opt/ros/humble')]), 'shell': False}
+[10.001476] (robot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.001626] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src\n'}
+[10.001668] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/description\n'}
+[10.001701] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/description/robot.urdf\n'}
+[10.001732] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes\n'}
+[10.001767] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Trailing.STL\n'}
+[10.001795] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Front_Right_Caster_Wheel_Main.STL\n'}
+[10.001823] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/wheel.usd\n'}
+[10.001850] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Right_Caster_Wheel_Main.STL\n'}
+[10.001877] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Front_Left_Caster_Wheel_Main.STL\n'}
+[10.001904] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/wheel.STL\n'}
+[10.001936] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/chasis.STL\n'}
+[10.001964] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/zed.STL\n'}
+[10.002014] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Left_Caster_Wheel_Main.STL\n'}
+[10.002041] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch\n'}
+[10.002067] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch/display.launch.py\n'}
+[10.002092] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch/gazebo.launch.py\n'}
+[10.002117] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz\n'}
+[10.002142] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz/c.rviz\n'}
+[10.002168] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz/config.rviz\n'}
+[10.002193] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config\n'}
+[10.002218] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config/gz_bridge.yaml\n'}
+[10.002243] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config/rtabmap_slam.yaml\n'}
+[10.002269] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world\n'}
+[10.002294] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world/depot.sdf\n'}
+[10.002318] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world/test.sdf\n'}
+[10.002343] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts\n'}
+[10.002368] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/gym_gazebo_env.py\n'}
+[10.002392] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/motor_command.cpp\n'}
+[10.002416] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/frame_id_converter.cpp\n'}
+[10.002440] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/particle_filter.py\n'}
+[10.002465] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/custom_slam.py\n'}
+[10.002490] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/ekf_diff_imu.cpp\n'}
+[10.002514] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/__pycache__\n'}
+[10.002553] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/__pycache__/gym_gazebo_env.cpython-310.pyc\n'}
+[10.002578] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/map_publisher.py\n'}
+[10.002601] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/astar.cpp\n'}
+[10.002624] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/frame_id_converter_node\n'}
+[10.002646] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/ekf_diff_imu_node\n'}
+[10.002684] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/motor_command_node\n'}
+[10.002754] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/astar_node\n'}
+[10.006007] (robot_description) StdoutLine: {'line': b'-- Set runtime path of "/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/astar_node" to ""\n'}
+[10.006057] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/map_publisher.py\n'}
+[10.006088] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/particle_filter.py\n'}
+[10.006126] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/custom_slam.py\n'}
+[10.006177] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/maps\n'}
+[10.006205] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/maps/depot.yaml\n'}
+[10.006229] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/maps/depot.pgm\n'}
+[10.006261] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description\n'}
+[10.006287] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description\n'}
+[10.006315] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/environment/ament_prefix_path.sh\n'}
+[10.006343] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv\n'}
+[10.006367] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/environment/path.sh\n'}
+[10.006404] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/environment/path.dsv\n'}
+[10.006451] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/local_setup.bash\n'}
+[10.006482] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/local_setup.sh\n'}
+[10.006507] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/local_setup.zsh\n'}
+[10.006546] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/local_setup.dsv\n'}
+[10.006572] (robot_description) StdoutLine: {'line': b'-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/package.dsv\n'}
+[10.006601] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/ament_index/resource_index/packages/robot_description\n'}
+[10.006625] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake\n'}
+[10.006649] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake\n'}
+[10.006679] (robot_description) StdoutLine: {'line': b'-- Up-to-date: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/package.xml\n'}
+[10.007754] (robot_description) CommandEnded: {'returncode': 0}
+[10.017666] (robot_description) JobEnded: {'identifier': 'robot_description', 'rc': 0}
+[10.017965] (-) EventReactorShutdown: {}

@@ -38,3 +38,12 @@ A major challenge in particle filters is the Kidnapped Robot Problem, where part
 Ultimately, once weak particles are filtered out and strong particles tightly cluster around the real location, the `estimate_and_publish_pose` function takes over. It calculates the average X and Y coordinates, alongside the circular mean of the particles' Yaw angles (to seamlessly handle angle wrap-arounds). This definitive pose is published to `/amcl_pose`, resulting in highly accurate, real-time robot localization as it moves through the simulated environment.
 
 ![Converged Particles](./images/converged_particles.png)
+
+### 📊 System Outputs and Verification
+To ensure the node strictly adheres to the mandated requirements, the outputs were verified visually and structurally:
+
+* **Estimated Pose:** The final localized pose is broadcasted strictly as a `geometry_msgs/PoseWithCovarianceStamped`. In RViz, this is visualized complete with its covariance matrix, demonstrating the algorithm's certainty shrinking as particles converge.
+![Pose with Covariance Visualization](./images/pose_covariance.png)
+
+* **TF Tree Connectivity:** A crucial requirement was dynamically linking the localization frame to the odometry frame. The node successfully broadcasts the `map` $\rightarrow$ `odom` transform. The structural integrity of the entire ROS 2 TF tree was validated using `tf2_tools view_frames`.
+![TF Tree Output](./images/tf_tree.png)

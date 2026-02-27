@@ -1,0 +1,103 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+-- Found tf2: 0.25.16 (/opt/ros/humble/share/tf2/cmake)
+-- Found tf2_ros: 0.25.17 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dynamic/Robo/ros2-custom-nav-stack/build/robot_description
+[ 16%] [32mBuilding CXX object CMakeFiles/ekf_diff_imu_node.dir/scripts/ekf_diff_imu.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/frame_id_converter_node.dir/scripts/frame_id_converter.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/motor_command_node.dir/scripts/motor_command.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable frame_id_converter_node[0m
+[ 83%] [32m[1mLinking CXX executable motor_command_node[0m
+[ 83%] Built target frame_id_converter_node
+[ 83%] Built target motor_command_node
+[100%] [32m[1mLinking CXX executable ekf_diff_imu_node[0m
+[100%] Built target ekf_diff_imu_node
+-- Install configuration: ""
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/description
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/description/robot.urdf
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Trailing.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Front_Right_Caster_Wheel_Main.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/wheel.usd
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Right_Caster_Wheel_Main.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Front_Left_Caster_Wheel_Main.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/wheel.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/chasis.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/zed.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/src/meshes/Rear_Left_Caster_Wheel_Main.STL
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch/display.launch.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/launch/gazebo.launch.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz/c.rviz
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/rviz/config.rviz
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config/gz_bridge.yaml
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/config/rtabmap_slam.yaml
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world/depot.sdf
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/world/test.sdf
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/gym_gazebo_env.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/motor_command.cpp
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/frame_id_converter.cpp
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/particle_filter.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/custom_slam.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/ekf_diff_imu.cpp
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/__pycache__
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/__pycache__/gym_gazebo_env.cpython-310.pyc
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/map_publisher.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/share/robot_description/scripts/astar.cpp
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/frame_id_converter_node
+-- Set runtime path of "/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/frame_id_converter_node" to ""
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/ekf_diff_imu_node
+-- Set runtime path of "/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/ekf_diff_imu_node" to ""
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/motor_command_node
+-- Set runtime path of "/home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/motor_command_node" to ""
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/map_publisher.py
+-- Installing: /home/dynamic/Robo/ros2-custom-nav-stack/install/robot_description/lib/robot_description/particle_filter.py

@@ -1,0 +1,1 @@
+sensor_msgs;rclcpp;ros_gz_sim;ros_gz_bridge;rtabmap_ros;rclpy;nav_msgs;joint_state_publisher;joint_state_publisher_gui;robot_state_publisher;rviz2;xacro;python3-numpy;python3-pil;python3-yaml;python3-transforms3d;tf2_ros;ament_lint_auto;ament_lint_common

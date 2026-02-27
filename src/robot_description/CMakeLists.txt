@@ -38,6 +38,15 @@ ament_target_dependencies(ekf_diff_imu_node
   geometry_msgs
 )
 
+add_executable(astar_node scripts/astar.cpp)
+ament_target_dependencies(astar_node
+  rclcpp
+  nav_msgs
+  geometry_msgs
+  tf2
+  tf2_ros
+)
+
 install(
   DIRECTORY src launch rviz config world scripts
   DESTINATION share/${PROJECT_NAME}
@@ -48,14 +57,13 @@ install(
     frame_id_converter_node
     ekf_diff_imu_node
     motor_command_node
+    astar_node
     DESTINATION lib/${PROJECT_NAME}
 )
-
 
 install(PROGRAMS
   scripts/map_publisher.py
   scripts/particle_filter.py
-  scripts/a_star_planner.py
   scripts/custom_slam.py
   DESTINATION lib/${PROJECT_NAME}
 )

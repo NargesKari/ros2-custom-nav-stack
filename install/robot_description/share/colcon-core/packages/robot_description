@@ -1,0 +1,1 @@
+joint_state_publisher:joint_state_publisher_gui:nav_msgs:python3-numpy:python3-pil:python3-transforms3d:python3-yaml:rclcpp:rclpy:robot_state_publisher:ros_gz_bridge:ros_gz_sim:rtabmap_ros:rviz2:sensor_msgs:tf2_ros:xacro

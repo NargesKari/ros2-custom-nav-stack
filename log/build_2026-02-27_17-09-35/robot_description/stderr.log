@@ -1,0 +1,6 @@
+[31mCMake Error at cmake_install.cmake:117 (file):
+  file INSTALL cannot find
+  "/home/dynamic/Robo/ros2-custom-nav-stack/src/robot_description/scripts/a_star_planner.py":
+  No such file or directory.
+
+[0m
