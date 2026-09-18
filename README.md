@@ -1,49 +1,52 @@
-# 🤖 ros2-custom-nav-stack
-Custom 2D navigation algorithms in ROS 2: Map loading, Particle Filter, A* Planner, and custom SLAM.
+# ros2-custom-nav-stack
 
-## 🗺️ Question 1: Map Loading and Publishing
-This section details the implementation of a custom ROS 2 map server, designed to read a 2D occupancy grid from disk, process the image data, and publish it continuously for downstream navigation and localization tasks.
+A ROS 2 navigation stack built from scratch instead of `nav2`: a custom occupancy-grid SLAM node, a Monte Carlo particle-filter localizer, an EKF sensor-fusion node, and an A* global planner, all wired together and verified against a Gazebo simulation.
 
-### 🏗️ Workspace Configuration and Node Implementation (`map_publisher.py`)
-To ensure proper execution, the workspace utilizes a dedicated `maps` directory for `.yaml` and `.pgm`/`.png` assets. The `CMakeLists.txt` is configured to correctly transfer these assets and the executable `map_publisher.py` to the `install` workspace. The core of this node processes raw image data into a standard ROS 2 format. It reads the Grayscale image matrix via the `PIL` library and applies an `np.flipud` transformation to invert the Y-axis, perfectly aligning the data with the ROS 2 standard (origin at the bottom-left). Pixel intensities are then translated into occupancy probabilities using the YAML file's `free_thresh` and `occupied_thresh` parameters, assigning $0$ to free space, $100$ to obstacles, and $-1$ to unknown regions. Crucially, the `/map` topic is configured with `DurabilityPolicy.TRANSIENT_LOCAL` QoS to act as a latch, ensuring late-joining subscribers like RViz or the Particle Filter reliably receive the latest map state.
+## What it does
 
-### ⚙️ Calibration, Integration, and Verification
-To guarantee the published map physically aligns with the robot's simulated Gazebo environment, the exact bottom-left coordinates of the physical walls were extracted ($X = -7.80$, $Y = -15.35$) and injected into the `origin` parameter of the `depot.yaml` file. The node dynamically synchronizes the map's origin with the simulator's global origin using these values. For a streamlined bring-up, `map_publisher_node` is fully integrated into the primary `display.launch.py` launch file, inheriting the `use_sim_time` configuration for perfect temporal synchronization. The pipeline was successfully verified in RViz by setting the `Fixed Frame` to `map` and using a `Transient Local` Map display, confirming that the map walls precisely overlap with the physical boundaries perceived by the simulated robot.
+- **`map_publisher.py`** — reads a `.pgm`/`.yaml` map pair from disk, converts pixel intensities to ROS occupancy probabilities (0 = free, 100 = occupied, -1 = unknown), and republishes it on `/map` with `TRANSIENT_LOCAL` durability so RViz or any node that starts late still gets the latest map.
+- **`custom_slam.py`** — builds an occupancy grid live from `/scan` and odometry, using Bresenham line tracing to mark free cells along each laser ray and the endpoint as occupied, and exposes a `/save_map` service to persist the map to disk.
+- **`particle_filter.py`** — a from-scratch Monte Carlo Localization implementation: 200 particles scattered only in known-free cells, motion-model prediction from odometry with proportional Gaussian noise, raycast-based sensor-weight scoring, and a hybrid resampling step (90% weighted resampling + 10% random re-injection) specifically to recover from the kidnapped-robot problem instead of converging permanently on a wrong pose.
+- **`ekf_diff_imu.cpp`** — an Eigen-based EKF that fuses wheel-encoder odometry with IMU angular velocity into a single `[x, y, theta]` state estimate and broadcasts the corresponding TF transform.
+- **`astar.cpp`** — a grid-based A* global planner that waits for a map, an AMCL-style pose, and a goal, then publishes a `nav_msgs/Path`.
+- **`frame_id_converter.cpp`** and **`motor_command.cpp`** — small integration nodes: the first patches an incorrect `frame_id` on Gazebo's simulated LiDAR point cloud, the second fans a two-element motor-command array out to separate left/right RPM topics.
+- **`gym_gazebo_env.py`** — a Gymnasium `Env` wrapper around the same Gazebo world, driving the simulation deterministically through Gazebo's `ControlWorld` service (pause/step/multi-step) instead of free-running wall-clock time, so an RL agent can be trained against this robot and world.
 
-![RViz Map Output - OccupancyGrid Visualization](./images/rviz_map_output.png)
+## Why it's interesting
 
----
-## 📍 Question 2: Global Localization Using Particle Filter (MCL)
-This section outlines the implementation of a custom Monte Carlo Localization (MCL) system from scratch. The primary objective was to bypass pre-built packages and develop a Python node (`particle_filter`) that estimates the robot's exact pose by intelligently fusing odometry data (blind movement) with laser scanner readings (environmental observation). During the initial testing and development phase, the TF tree between `map` and `odom` was temporarily bridged using a Static Transform, which was later replaced by the algorithm's dynamic TF broadcasting.
+Most of this exists specifically because `nav2`'s built-in AMCL and planner were deliberately not used — the particle filter, the EKF, and the A* planner are all hand-implemented against raw topics (`/scan`, `/map`, wheel odometry, IMU), which means every one of the usual pitfalls had to be handled explicitly rather than inherited from a maintained package. Two examples: the particle filter's resampling step doesn't purely exploit high-weight particles, because doing so causes permanent convergence on a wrong pose the moment early observations are misleading — the 10%-random-injection floor is what lets it recover. And the SLAM node's use of Bresenham line tracing (rather than just marking scan endpoints as occupied) is what actually clears previously-unknown cells to free space as the robot passes through them, which is the difference between "a scatter plot of hits" and an actual occupancy map a planner can use.
 
-### 🎲 Initialization (Global Dispersal)
-Upon startup, the robot possesses zero prior knowledge of its location within the received map. To counter this, the `initialize_particles` function is executed, which uniformly scatters exactly 200 particles across the environment. A strict logical constraint (`self.map_data == 0`) is enforced during this generation phase to guarantee that particles strictly spawn within known free spaces, avoiding any invalid initializations inside walls or obstacles.
+The Gazebo RL environment is the other non-obvious piece: naively stepping a Gym environment against a live Gazebo sim races the physics engine against the RL loop's wall-clock timing. This wrapper instead calls Gazebo's `ControlWorld` service to explicitly pause the world and step it a fixed number of physics ticks per `env.step()`, making training reproducible regardless of how fast the training loop itself runs on a given machine.
 
-![Initial Scattered Particles](./images/scattered_particles.png)
+## Tech stack
 
-### 🚀 Prediction Step (Motion Model)
-As the robot navigates, the node actively listens to the `/ekf_diff_imu/odom` topic to compute the relative displacement and rotation (Δx, Δy, Δθ) since the last timestamp. This movement is mathematically applied to every single particle in the 200-particle pool. Recognizing that real-world kinematics are inevitably flawed by wheel slip and drift, Gaussian noise—strictly proportional to the distance traveled—is injected into the particles' kinematic updates. This effectively models the inherent uncertainty of the odometry sensor.
+ROS 2, C++ (EKF, A*, and two integration nodes, built with `ament_cmake` and Eigen3), Python (map publishing, SLAM, particle filter, installed via `ament_cmake_python`), Gazebo (via `ros_gz_bridge`/`ros_gz_interfaces`) for simulation, `gymnasium` for the RL environment wrapper, RViz for visualization.
 
-### 📡 Sensor Update and Weighting (Correction)
-The `scan_callback` function handles the critical task of matching the robot's real-time observations against the static map. To prevent processing bottlenecks, the incoming `/scan` data is downsampled using a step size of 10. For each particle, the algorithm simulates a raycasting process: it calculates where the laser beams would hit if the robot were hypothetically positioned at that particle's exact coordinate. Simulated hits that align with mapped walls (`map_data > 50`) reward the particle with a positive score. These final scores are then squared to exponentially amplify the weights; this ensures that particles closely reflecting reality become heavily weighted, while erroneous particles lose influence.
+## Getting started
 
-### 🔄 Resampling and Error Recovery Mechanism
-A major challenge in particle filters is the Kidnapped Robot Problem, where particles might lock onto a false location. To mitigate this, the Effective Number of Particles ($N_{eff}$) diversity index is monitored. When diversity drops, a hybrid resampling mechanism kicks in:
-* **Survival of the Fittest (90%):** 90% of the new particle generation is drawn from the existing pool based on their accumulated weights, with slight noise added during duplication.
-* **Random Injection (10%):** To prevent false convergence and dynamically correct errors, the remaining 10% of the capacity is strictly dedicated to purely random injection. These particles are continuously spawned in free spaces. If the robot loses its position, these random explorers quickly catch valid sensor readings and magnetically pull the rest of the swarm toward the correct location.
+Requires a ROS 2 workspace with Gazebo and the `ros_gz` bridge packages installed.
 
-![Particle Convergence](./images/particle_convergence.gif)
+```bash
+cd src/robot_description/..   # workspace root
+colcon build
+source install/setup.bash
+ros2 launch robot_description gazebo.launch.py   # spawns the robot in the depot world
+ros2 launch robot_description display.launch.py  # brings up map_publisher + RViz
+```
 
-### 🎯 Final Pose Estimation
-Ultimately, once weak particles are filtered out and strong particles tightly cluster around the real location, the `estimate_and_publish_pose` function takes over. It calculates the average X and Y coordinates, alongside the circular mean of the particles' Yaw angles (to seamlessly handle angle wrap-arounds). This definitive pose is published to `/amcl_pose`, resulting in highly accurate, real-time robot localization as it moves through the simulated environment.
+Run the custom stack's nodes individually once the simulation is up:
 
-![Converged Particles](./images/converged_particles.png)
+```bash
+ros2 run robot_description ekf_diff_imu_node
+ros2 run robot_description astar_node
+ros2 run robot_description particle_filter.py
+ros2 run robot_description custom_slam.py
+```
 
-### 📊 System Outputs and Verification
-To ensure the node strictly adheres to the mandated requirements, the outputs were verified visually and structurally:
+To build your own map instead of using the bundled `maps/depot.yaml`: run `custom_slam.py` while driving the robot around, then `ros2 service call /save_map std_srvs/srv/Empty`.
 
-* **Estimated Pose:** The final localized pose is broadcasted strictly as a `geometry_msgs/PoseWithCovarianceStamped`. In RViz, this is visualized complete with its covariance matrix, demonstrating the algorithm's certainty shrinking as particles converge.
-![Pose with Covariance Visualization](./images/pose_covariance.png)
+## Architecture
 
-* **TF Tree Connectivity:** A crucial requirement was dynamically linking the localization frame to the odometry frame. The node successfully broadcasts the `map` $\rightarrow$ `odom` transform. The structural integrity of the entire ROS 2 TF tree was validated using `tf2_tools view_frames`.
-![TF Tree Output](./images/tf_tree.png)
+The pipeline is `map_publisher` (or `custom_slam` while mapping) → `particle_filter` (publishes `/amcl_pose` and the `map`→`odom` TF) → `astar_node` (consumes the map, the localized pose, and `/goal_pose` to publish `/global_path`), with `ekf_diff_imu_node` running in parallel to provide the fused odometry that both the particle filter and SLAM node consume. `gym_gazebo_env.py` sits outside this pipeline as an alternative RL-facing interface to the same simulated robot.
+
+<!-- add screenshot/demo here -->
